@@ -50,3 +50,11 @@ a {
   width: 100%;
   text-align: center;
 }
+
+.stocks__products {
+  transition: all 100ms ease-in;
+}
+.whenDanger {
+  background-color: red;
+  color: #fff;
+}

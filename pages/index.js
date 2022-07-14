@@ -1,13 +1,15 @@
 import Head from "next/head";
 import { useCart } from "../feature/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import classNames from "classnames";
 
 export default function Home() {
   const { myCart, myStock } = useSelector((state) => state);
   const { allProductsQuantity } = myCart;
-  const { stockProductsQuantity } = myStock;
+  const { stockProductsQuantity, isDanger } = myStock;
   const { addToCart } = useCart();
   const dispatch = useDispatch();
+
   return (
     <div>
       <Head>
@@ -24,7 +26,9 @@ export default function Home() {
             Add To Cart
           </a>
         </div>
-        <div className="stocks__products">
+        <div
+          className={classNames("stocks__products", { whenDanger: isDanger })}
+        >
           <h2 className="title">Available Products</h2>
           <h3 className="quantity"> {stockProductsQuantity} </h3>
         </div>
