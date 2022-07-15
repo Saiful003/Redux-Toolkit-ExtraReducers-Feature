@@ -52,7 +52,7 @@ a {
 }
 
 .stocks__products {
-  transition: all 100ms ease-in;
+  transition: all 100ms ease;
 }
 .whenDanger {
   background-color: red;
