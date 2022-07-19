@@ -28,7 +28,9 @@ export default function Home({ posts }) {
       <div className="wrapper">
         <div>
           {posts.map((post) => (
-            <div className="title"> {post.title} </div>
+            <div key={post.id} className="title">
+              {post.title}
+            </div>
           ))}
         </div>
         <div className="container">
